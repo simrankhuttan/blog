@@ -6,11 +6,10 @@ import os
 import dj_database_url
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parentzz
 
-# =========================
 # SECURITY SETTINGS
-# =========================
+
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -21,9 +20,9 @@ ALLOWED_HOSTS = os.environ.get(
     '127.0.0.1,localhost'
 ).split(',')
 
-# =========================
+
 # APPLICATIONS
-# =========================
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -40,9 +39,9 @@ INSTALLED_APPS = [
     'users',
 ]
 
-# =========================
+
 # MIDDLEWARE
-# =========================
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,17 +54,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# =========================
-# URL / WSGI
-# =========================
 
+# URL / WSGI
 ROOT_URLCONF = 'blogProject.urls'
 
 WSGI_APPLICATION = 'blogProject.wsgi.application'
 
-# =========================
+
 # TEMPLATES
-# =========================
 
 TEMPLATES = [
     {
@@ -82,10 +78,8 @@ TEMPLATES = [
     },
 ]
 
-# =========================
-# DATABASE (POSTGRES / SQLITE fallback)
-# =========================
 
+# DATABASE (POSTGRES / SQLITE fallback)
 DATABASE_URL = os.environ.get('DATABASE_URL')
 
 if DATABASE_URL:
@@ -104,10 +98,8 @@ else:
         }
     }
 
-# =========================
-# PASSWORD VALIDATION
-# =========================
 
+# PASSWORD VALIDATION
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -115,41 +107,32 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-# =========================
 # INTERNATIONALIZATION
-# =========================
-
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# =========================
+
 # STATIC / MEDIA FILES
-# =========================
 
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# =========================
-# CRISPY FORMS
-# =========================
 
+# CRISPY FORMS
 CRISPY_ALLOWED_TEMPLATE_PACKS = ['bootstrap4']
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-# =========================
-# LOGIN SETTINGS
-# =========================
 
+# LOGIN SETTINGS
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
 
-# =========================
+
 # EMAIL CONFIG (GMAIL SMTP)
-# =========================
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
